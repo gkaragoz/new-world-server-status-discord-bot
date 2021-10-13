@@ -1,11 +1,10 @@
 const scrapeData = require("./src/newWorld");
+require("dotenv").config();
 
 // require("./src/webhook");
 
 // const { sendHook, hookTypes } = require("./src/webhook");
 // sendHook("SERVER STATUS", `Online! \nPORT:`, hookTypes.Success);
-
-const TOKEN = "ODk3OTA0MDAyNzk1MTc2MDM2.YWccRA.QgjxNDJXw7JnZgtDi8s932VPsDM";
 
 const Discord = require("discord.js");
 const intents = new Discord.Intents(32767);
@@ -32,4 +31,4 @@ client.on("messageCreate", async (message) => {
 	}
 });
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
