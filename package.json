@@ -1,0 +1,24 @@
+{
+  "name": "new-world-server-status-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkaragoz/new-world-server-status-discord-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gkaragoz/new-world-server-status-discord-bot/issues"
+  },
+  "homepage": "https://github.com/gkaragoz/new-world-server-status-discord-bot#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "node-fetch": "^2.6.5"
+  }
+}

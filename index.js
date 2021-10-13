@@ -1,0 +1,3 @@
+// require("./worldCupTest");
+
+require("./newWorld");
