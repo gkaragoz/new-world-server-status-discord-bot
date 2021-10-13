@@ -19,6 +19,7 @@
   "homepage": "https://github.com/gkaragoz/new-world-server-status-discord-bot#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
-    "node-fetch": "^2.6.5"
+    "node-fetch": "^2.6.5",
+    "webhook-discord": "^3.7.8"
   }
 }

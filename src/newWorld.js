@@ -1,6 +1,5 @@
 const fetch = require("node-fetch");
 const cheerio = require("cheerio");
-const fs = require("fs");
 // function to get the raw data
 const getRawData = (URL) => {
 	return fetch(URL)
@@ -23,6 +22,7 @@ const scrapeData = async () => {
 	$(".ags-ServerStatus-content-responses-response-server").each((i, el) => {
 		const itemParent = $(el);
 		const itemTitleStatus = $(el).find("div").html();
+		console.log(itemTitleStatus);
 		const itemServerName = $(el)
 			.find("div")
 			.next("div")
