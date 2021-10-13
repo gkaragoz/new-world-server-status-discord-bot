@@ -12,17 +12,17 @@ const getRawData = (URL) => {
 // URL for data
 const URL = "https://www.newworld.com/en-us/support/server-status";
 // start of the program
-const scrapeData = async () => {
+const scrapeData = async (serverName) => {
 	const rawData = await getRawData(URL);
 	// parsing the data
 	const $ = cheerio.load(rawData);
 	// console.log($);
 	// write code to extract the data
-	const data = [];
+	const serverList = [];
+	let data = "";
 	$(".ags-ServerStatus-content-responses-response-server").each((i, el) => {
 		const itemParent = $(el);
 		const itemTitleStatus = $(el).find("div").html();
-		console.log(itemTitleStatus);
 		const itemServerName = $(el)
 			.find("div")
 			.next("div")
@@ -39,13 +39,21 @@ const scrapeData = async () => {
 			titleString.lastIndexOf('"')
 		);
 
-		data.push({
+		if (serverName.toLowerCase() === itemServerName.toLowerCase()) {
+			if (status === "Maintenance") {
+				data = serverName + " is under " + status + " ⚒🚬";
+			} else {
+				data = serverName + " is: " + status + " 🚀";
+			}
+		}
+
+		serverList.push({
 			server_name: itemServerName,
 			server_status: status,
 		});
 	});
 
-	console.log(data);
+	return data;
 };
-// invoking the main function
-scrapeData();
+
+module.exports = scrapeData;
